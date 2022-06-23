@@ -29,25 +29,21 @@ function Calculator()  {
         switch (operation) {
             case "+":
                 setSavedNumber(a+b);
-                console.log('a+b  ', a, b, a+b);
                 setOperator("");
                 setOutput("")
                 break;
             case "-":
                 setSavedNumber(a-b);
-                console.log('a-b  ', a, b, a-b);
                 setOperator("");
                 setOutput("")
                 break;
             case "*":
                 setSavedNumber(a*b);
-                console.log('a*b  ', a, b, a*b);
                 setOperator("");
                 setOutput("")
                 break;
             case "/":
                 setSavedNumber(a/b);
-                console.log('a/b  ', a, b, a/b);
                 setOperator("");
                 setOutput("")
                 break;
@@ -59,13 +55,7 @@ function Calculator()  {
 
     //finish === true => расчет закончен, можно выводить ответ шрифтом побольше
     const [finish, setFinish] = useState(false);
-
-    //проверка всего что есть...
-    console.log('output ', output);
-    console.log('operator ', operator);
-    console.log('savedNumber ', savedNumber);
-    // console.log('answer ', answer);
-    
+  
     const btnHandler = (event: React.MouseEvent<HTMLDivElement>) => {
         finish && setFinish(!finish);
         const value = (event.target as HTMLInputElement).innerHTML;

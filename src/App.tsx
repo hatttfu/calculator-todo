@@ -14,19 +14,6 @@ function App() {
     fetchTodos()
   }, [])
 
-  React.useEffect(() => {
-    let copy = [...todos];
-    let i = 0;
-    let newTodos: ITodo[] = [];
-    copy.forEach(todo => {
-        todo.id = i;
-        i++;
-        newTodos.push(todo)
-    });
-
-    setTodos(newTodos)
-  }, [todos])
-
   async function fetchTodos() {
     try {
       const response = await axios.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos?_limit=5')
@@ -46,7 +33,6 @@ function App() {
     if (checkedTodo !== undefined) {
       checkedTodo.completed = !checkedTodo.completed;
       setTodos(copy)
-      console.log(todos)
     }
   }
 
@@ -56,8 +42,20 @@ function App() {
     if (removeTodo !== undefined) {
       copy = copy.filter(todo => todo.id !== removeTodo.id);
       setTodos(copy)
-      console.log(todos)
     }
+  }
+
+  const manageTodo = (todos: ITodo[]) => {
+    let copy = [...todos];
+    let i = 0;
+    let newTodos: ITodo[] = [];
+    copy.forEach(todo => {
+        todo.id = i;
+        i++;
+        newTodos.push(todo)
+    });
+
+    setTodos(newTodos)
   }
 
   const onEnterPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -73,10 +71,8 @@ function App() {
           "title": value,
           "completed": false
         });
-        console.log('after adding copy', copy);
         (event.target as HTMLInputElement).value = '';
-        setTodos(copy);
-        console.log('after adding ', todos)
+        manageTodo(copy);
     }
   }
 
