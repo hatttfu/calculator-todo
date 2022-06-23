@@ -1,13 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #1e1e1e;
+  font-family: 'Kanit', sans-serif;
+  color: #e7e7e7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  margin: 40px 0;
+  justify-content: space-between;
 }
+
+.container {
+  max-width: 850px;
+  min-width: 600px;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 28px;
+}
+
+.todo-list{
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.block {
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  width: 100%;
+  border-bottom: .5px solid#404040;
+}
+
+.text {
+  width: 100%;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+.sidebar {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.calculator-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+}
+
+.number {
+  border: .5px solid #9b9a9a;
+  padding: .5em .8em;
+  background: gold;
+}
+
+.calculator-btns {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  border-left: .5px solid #9b9a9a;
+  padding-left: 10px;
+  margin-left: 15px;
+}
+
+.btn {
+  border: .5px solid #9b9a9a;
+  padding: .4em .8em;
+  background: rgb(2, 2, 36);
+  color: #fff;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+.subtn {
+  display: flex;
+}
+
+.btn:hover, .number:hover {
+  background-color: rgb(171, 147, 10);
+}
+
+#checked {
+  text-decoration: line-through;
+}
+
+.add-task input {
+  background: inherit;
+  border: none;
+  width: 100%;
+  font-size: 22px;
+  color: #fff;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  height: 50px
+}
+
+.answer {
+  margin-left: 10px;
+}
+
+#finished {
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+
+
+
